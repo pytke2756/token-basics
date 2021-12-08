@@ -1,4 +1,6 @@
 <?php
+
+use Petrik\Loginapp\Middlewares\AuthMiddleware;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
@@ -52,6 +54,6 @@ return function(App $app){
             return $response->withHeader('Content-Type', 'application/json')
                     ->withStatus(200);
         });
-    });
+    })->add(new AuthMiddleware());
 
 };
