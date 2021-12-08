@@ -21,7 +21,7 @@ $db->bootEloquent();
 
 $app = AppFactory::create();
 
-$routes = require '../src/routes.php';
+$routes = require '../src/middlewares.php';
 $routes($app);
 
 $routes = require '../src/routes.php';
