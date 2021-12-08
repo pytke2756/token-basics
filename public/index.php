@@ -24,4 +24,7 @@ $app = AppFactory::create();
 $routes = require '../src/routes.php';
 $routes($app);
 
+$routes = require '../src/routes.php';
+$routes($app);
+
 $app->run();
