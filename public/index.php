@@ -1,5 +1,7 @@
 <?php
 
+require __DIR__ . '/../vendor/autoload.php';
+
 use Slim\Factory\AppFactory;
 use Illuminate\Database\Capsule\Manager;
 
@@ -11,13 +13,11 @@ $db->addConnection([
     'username' => 'root',
     'password' => '',
     'charset' => 'utf8mb4',
-    'collation' => 'utf8_unicode_ci',
+    'collation' => 'utf8mb4_unicode_ci',
     'prefix' => '',
 ]);
 $db->setAsGlobal();
 $db->bootEloquent();
-
-require __DIR__ . '/../vendor/autoload.php';
 
 $app = AppFactory::create();
 
